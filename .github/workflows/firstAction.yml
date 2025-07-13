@@ -7,6 +7,7 @@ jobs:
     steps:
       - name: Print Morning Greeting
         run: echo "Hello World!"
+             echo "How's Git Action learning going on"
       
       - name: Print Evening Greeting
         run: echo "good Bye"
