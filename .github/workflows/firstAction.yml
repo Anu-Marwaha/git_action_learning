@@ -1,4 +1,4 @@
-name: first Workflow
+|name: first Workflow
 on: 
   workflow_dispatch:
 jobs:
@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Morning Greeting
-        run: 
+        run: |
           echo "Hello World!"
           echo "How's Git Action learning going on"
       
