@@ -10,7 +10,7 @@ on:
 jobs:
   Test:
     runs-on: ubuntu-latest
-
+    needs: deploy1987
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -27,7 +27,7 @@ jobs:
         run: npm test
   deploy1987:
     runs-on: ubuntu-latest
-    needs: Test
+   
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
