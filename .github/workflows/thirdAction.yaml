@@ -1,10 +1,17 @@
 name: Git Action Events Practice
 
 on:
-  
+  push:
+    branches: [ Events,'m**' ]
   pull_request:
-    branches: [ main ]
+    branches: [ 'm**' ]
     types: [opened, synchronize, reopened]
+
+  paths-ignore:
+    - '**.md'
+    - '**.txt'
+ 
+
   workflow_dispatch:
 
 jobs:
