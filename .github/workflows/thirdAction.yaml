@@ -1,0 +1,50 @@
+name: Git Action Events Practice
+
+on:
+  push:
+    branches: [ Events,'m**' ]
+  pull_request:
+    branches: [ 'm**' ]
+    types: [opened, synchronize, reopened]
+
+  paths-ignore:
+    - '**.md'
+    - '**.txt'
+ 
+
+  workflow_dispatch:
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+  deploy1987:
+    runs-on: ubuntu-latest
+    needs: Test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Display message
+        run: echo "Deploying to production environment"
