@@ -1,10 +1,10 @@
 name: Node.js CI Practice
 
 on:
-  push:
-    branches: [ master ]
+  
   pull_request:
-    branches: [ master ]
+    branches: [ events ]
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 jobs:
