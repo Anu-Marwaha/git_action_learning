@@ -3,7 +3,7 @@ name: Git Action Events Practice
 on:
   
   pull_request:
-    branches: [ events ]
+    branches: [ main ]
     types: [opened, synchronize, reopened]
   workflow_dispatch:
 
